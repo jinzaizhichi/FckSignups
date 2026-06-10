@@ -63,14 +63,9 @@ The default categories are:
 
 ## Contributing
 
-1. Fork this repo
-2. Add tools to `tools.json` or the embedded `FALLBACK_DATA`
-3. Open a pull request with a clear description
-
 ### Contribution guidelines
 - The tool must work **without creating an account**
-- Prefer open-source projects with public repositories
-- Include accurate GitHub star counts and license info when available
+- Include accurate GitHub star counts and license info when available (temporary until stars fetcher workers)
 - Keep descriptions under 140 characters
 - Use 3-5 relevant tags per tool
 
