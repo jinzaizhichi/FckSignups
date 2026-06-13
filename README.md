@@ -8,9 +8,15 @@ A curated collection of open-source tools you can use instantly in your browser 
 
 ## What is this?
 
-FckSignups is a single-file, dependency-free directory of browser-based tools that respect your time. No signups. No dark patterns. No "create an account to continue." Just open the page, find a tool, and use it.
+FckSignups is a React + TypeScript project. If you want to run it locally, simply clone the repo, install the depedencies, and run the server.
 
-The entire site is one HTML file. No build step. No npm. No framework. Open it in any browser and it works.
+Here's a command that would do all the previous steps in one go:
+```bash
+git clone https://github.com/BraveOPotato/FckSignups.git && \
+cd FckSignups && \
+npm install && \
+npm run dev
+```
 
 ---
 
@@ -69,6 +75,14 @@ The default categories are:
 - Keep descriptions under 140 characters
 - Use 3-5 relevant tags per tool
 - Use the following link to add a tool you [found/made](https://github.com/BraveOPotato/FckSignups/issues/new?template=request-to-add-a-tool.md)
+
+---
+
+## Discussions
+
+If you'd like to voice your opinion, we have a community on reddit [r/fucksignups](https://www.reddit.com/r/fucksignups/).
+
+Don't be afraid to critique. 
 
 ---
 
