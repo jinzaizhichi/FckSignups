@@ -679,6 +679,66 @@
       "license": "Apache-2.0",
       "stars": 25400,
       "featured": false
+    },
+    {
+      "id": "sharr",
+      "name": "Sharr",
+      "description": "End-to-end encrypted file transfer",
+      "url": "https://www.sharrr.com/",
+      "category": "utilities",
+      "tags": ["file-sharing", "file", "share"],
+      "github": "https://github.com/stophecom/sharrr-svelte",
+      "license": "MIT",
+      "stars": 163,
+      "featured": false
+    },
+    {
+      "id": "ente-paste",
+      "name": "ente Paste",
+      "description": "Share text between devices securely with QR code or URL",
+      "url": "https://paste.ente.com/",
+      "category": "utilities",
+      "tags": ["paste", "text", "share"],
+      "github": "https://github.com/ente-io/ente",
+      "license": "AGPL-3.0",
+      "stars": 27100,
+      "featured": false
+    },
+    {
+      "id": "linwood-butterfly",
+      "name": "Linwood Butterfly",
+      "description": "Powerful, minimalistic, cross-platform, opensource note-taking app",
+      "url": "https://web.butterfly.linwood.dev/",
+      "category": "writing",
+      "tags": ["notes", "note-taking", "sketch"],
+      "github": "https://github.com/LinwoodDev/Butterfly",
+      "license": "AGPL-3.0",
+      "stars": 1900,
+      "featured": false
+    },
+    {
+      "id": "rom-patcher-js",
+      "name": "Rom Patcher JS",
+      "description": "A ROM patcher made in Javascript",
+      "url": "https://www.marcrobledo.com/RomPatcher.js/",
+      "category": "development",
+      "tags": ["rom", "emulation", "patch"],
+      "github": "https://github.com/marcrobledo/RomPatcher.js/",
+      "license": "MIT",
+      "stars": 1100,
+      "featured": false
+    },
+    {
+      "id": "mini-photoeditor",
+      "name": "MiNi PhotoEditor",
+      "description": "Online webgl photo editor with effects, filters and cropping",
+      "url": "https://mini2-photo-editor.netlify.app/",
+      "category": "media",
+      "tags": ["photo", "picutre", "edit"],
+      "github": "https://github.com/xdadda/mini-photo-editor",
+      "license": "MIT",
+      "stars": 528,
+      "featured": false
     }
   ]
 }
