@@ -81,7 +81,7 @@ def loadJSONFile():
 # Turn the dict object into a JSON string and overwrite
 # the JSON_PATH file with the string content.
 # @param {dict} json_variable - dict object.
-def updateJsonFile(json_variable):
+def updateJSONFile(json_variable):
     with open(JSON_PATH, "w") as json_file:
         dump(json_variable, json_file, indent=2, ensure_ascii=False)
 
@@ -89,13 +89,19 @@ def updateJsonFile(json_variable):
 # Entry to the program
 def main():
     try:
-        new_tool_json = getToolInput()
         json_file_data = loadJSONFile()
+
+        # print category ids
+        for category in json_file_data["categories"]:
+            print(category["id"], end=', ')
+        print()
+
+        new_tool_json = getToolInput()
 
         # Add tool to 'JSON'.
         json_file_data["tools"].append(new_tool_json)
 
-        updateJsonFile(json_file_data)
+        updateJSONFile(json_file_data)
 
     # TODO: catch other errors.
     except JSONDecodeError:
