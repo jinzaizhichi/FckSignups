@@ -943,6 +943,54 @@
       "license": "Apache-2.0",
       "stars": 8300,
       "featured": false
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "description": "A suite of random, mostly weird, generative art tools!",
+      "url": "https://studio.neato.fun/",
+      "category": "design",
+      "tags": ["ascii", "algorithm", "dithering", "svg"],
+      "github": "https://github.com/Shpigford/studio",
+      "license": "MIT",
+      "stars": 139,
+      "featured": false
+    },
+    {
+      "id": "gately",
+      "name": "Gately",
+      "description": "Simple and modern web-based logic gate simulator",
+      "url": "https://www.gately.dev/",
+      "category": "development",
+      "tags": ["logic-gate", "cs", "science"],
+      "github": "https://github.com/jakmaz/gately",
+      "license": "MIT",
+      "stars": 7,
+      "featured": false
+    },
+    {
+      "id": "world-monitor",
+      "name": "World Monitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "url": "https://www.worldmonitor.app/",
+      "category": "data",
+      "tags": ["osint", "news", "monitor", "news"],
+      "github": "https://github.com/koala73/worldmonitor?utm_source=worldmonitor&utm_medium=referral&utm_campaign=general",
+      "license": "AGPL-3.0-only",
+      "stars": 56500,
+      "featured": false
+    },
+    {
+      "id": "dither",
+      "name": "dither",
+      "description": "Pixel-perfect dithering utility. Drop an image, dial in the settings, ship a dither",
+      "url": "https://dither.fuego.im/",
+      "category": "design",
+      "tags": ["image", "editor"],
+      "github": "https://github.com/fuegocoding/dither",
+      "license": "?",
+      "stars": 0,
+      "featured": false
     }
   ]
 }
