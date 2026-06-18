@@ -1267,6 +1267,30 @@
       "license": "AGPL-3.0",
       "stars": 55,
       "featured": false
+    },
+    {
+      "id": "free-cv-builder",
+      "name": "Free CV Builder",
+      "description": "Build a professional CV in a few minutes and download it as a PDF",
+      "url": "https://buildmyfree.cv/",
+      "category": "writing",
+      "tags": ["cv", "resume", "builder"],
+      "github": "https://github.com/themidnightgospel/free-cv-builder",
+      "license": "MIT",
+      "stars": 23,
+      "featured": false
+    },
+    {
+      "id": "jobber",
+      "name": "Jobber",
+      "description": "Dynamic Job Search RSS Feed Generator",
+      "url": "https://rssjobs.app/",
+      "category": "utilities",
+      "tags": ["jobs", "rss", "generator", "search", "scraper"],
+      "github": "https://github.com/alwedo/jobber",
+      "license": "MIT",
+      "stars": 6,
+      "featured": false
     }
   ]
 }
