@@ -1363,6 +1363,42 @@
       "license": "MIT",
       "stars": 0,
       "featured": false
+    },
+    {
+      "id": "dropsilk",
+      "name": "DropSilk",
+      "description": "Modern, privacy-focused, peer-to-peer file transfer application built with WebRTC with screen-share and chat functionality",
+      "url": "https://www.dropsilk.xyz/",
+      "category": "utilities",
+      "tags": ["file", "transfer", "p2p", "chat", "file-transfer"],
+      "github": "https://github.com/medy17/dropsilk",
+      "license": "GPL-3.0",
+      "stars": 10,
+      "featured": false
+    },
+    {
+      "id": "toolsatzero",
+      "name": "ToolsAtZero",
+      "description": "A workbench of 52 everyday utilities (PDF manipulation, image processing, dev tools)",
+      "url": "https://www.toolsatzero.com/",
+      "category": "utilities",
+      "tags": ["pdf", "image", "dev-tools"],
+      "github": "https://github.com/Anirudh-Rao-portfolio/ToolsAtZero",
+      "license": "NC",
+      "stars": 11,
+      "featured": false
+    },
+    {
+      "id": "online-tools",
+      "name": "Online tools",
+      "description": "Online tools provides md2, md5, sha1, sha2, sha512, bas64, html encode / decode functions",
+      "url": "https://emn178.github.io/online-tools/",
+      "category": "development",
+      "tags": ["encode", "decode", "hash", "convert"],
+      "github": "https://github.com/emn178/online-tools",
+      "license": "?",
+      "stars": 1193,
+      "featured": false
     }
   ]
 }
