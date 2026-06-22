@@ -1,3 +1,9 @@
+# A tool to quickly add a tool to the tools.json given a GitHub issue URL.
+# The issue MUST have the <SUBMISSION></SUBMISSION> XML tags. The tool
+# will parse the submission and auto-populate the fields required for the
+# tools.json file. The tool will also send requests to GitHub to fetch
+# the accurate count of stars and license info.
+
 from addTool import (
     JSON_PATH,
     getArrayInput,
@@ -9,6 +15,9 @@ from addTool import (
 from githubBridge import GitHubIssueBridge, GitHubRepoBridge
 
 
+# Ensures that the fields contain the valid number of strings
+# and the GitHub URL isn't blank.
+# @param {str list} fields - A split of the insides of <SUBMISSION></SUBMISSION>
 def validate(fields):
     if len(fields) != 6:
         print("Invalid number of arguments.")
@@ -20,6 +29,9 @@ def validate(fields):
         raise
 
 
+# Creates a tool dictionary object to be added to the tools.json
+# @param {str list} fields - A split of the insides of <SUBMISSION></SUBMISSION>
+# @returns {dict} tool - A dict of the new tool
 def createToolDict(fields):
     repoBridge = GitHubRepoBridge(github_repo_link=fields[4])
 
@@ -43,12 +55,14 @@ def createToolDict(fields):
     return new_tool_json
 
 
+# Prints all valid category ids
 def printAllCategories(json_file_data):
     for category in json_file_data["categories"]:
         print(category["id"], end=", ")
     print()
 
 
+# Entry
 def main():
     userInput = getInput("Issue URL:")
     issueBridge = GitHubIssueBridge(userInput)

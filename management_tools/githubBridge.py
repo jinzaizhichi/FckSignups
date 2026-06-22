@@ -1,3 +1,6 @@
+# A bridge to let Python interact with GitHub API
+# in an abstract way in regards to a specific GitHub repo.
+
 import re
 from urllib.parse import urlparse
 
@@ -5,6 +8,10 @@ import requests
 
 
 class GitHubBridge:
+    # Turns a github.com/<user>/<repo>
+    # to api.github.com/repos/<user>/<repo>
+    # @param {str} url - A GitHub repo URL
+    # @returns {str} url - A GitHub API URL
     def toAPIURL(self, url):
         parsed = urlparse(url)
 
@@ -19,6 +26,7 @@ class GitHubBridge:
         return api_url
 
 
+# Abstraction to get the GitHub stars and license.
 class GitHubRepoBridge(GitHubBridge):
     def __init__(self, github_repo_link):
         self._stars = 0
@@ -26,6 +34,8 @@ class GitHubRepoBridge(GitHubBridge):
         self._url = github_repo_link
         self._queryRepo()
 
+    # Queries the GitHub API to get the stars count
+    # and license.
     def _queryRepo(self):
         api_url = self.toAPIURL(self._url)
 
@@ -39,6 +49,7 @@ class GitHubRepoBridge(GitHubBridge):
         license_info = data.get("license")
         self._license = license_info.get("spdx_id", "") if license_info else ""
 
+    # Getters
     def getStars(self):
         return self._stars
 
@@ -49,12 +60,15 @@ class GitHubRepoBridge(GitHubBridge):
         return self._url
 
 
+# Abstraction to get the automation string from a given
+# GitHub issue URL.
 class GitHubIssueBridge(GitHubBridge):
     _submission_automation_string = None
 
-    def __init__(self, github_repo_link):
-        self._getAutomationString(github_repo_link)
+    def __init__(self, github_issue_url):
+        self._getAutomationString(github_issue_url)
 
+    # @param {str} url - A GitHub issue URL
     def _getAutomationString(self, github_repo_link):
         api_url = f"{self.toAPIURL(github_repo_link)}/issues/{github_repo_link.split('/')[-1]}"
 
@@ -68,5 +82,6 @@ class GitHubIssueBridge(GitHubBridge):
         if match:
             self._submission_automation_string = match.group(1)
 
+    # Getters
     def getAutomationString(self):
         return self._submission_automation_string

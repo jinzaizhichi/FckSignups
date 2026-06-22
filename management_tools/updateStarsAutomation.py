@@ -1,17 +1,21 @@
+# Updates the stars count on all tools using GraphQL
+# DISCLAMER: AI generated until I learn GraphQL #
+# Goes out and batch fetches the current stars_count from the repos
+# I'm using GraphQL because I hit rate limits with the REST API.
+
 import os
 from urllib.parse import urlparse
 
 import requests
 from addTool import loadJSONFile, updateJSONFile
 
-# DISCLAMER: AI generated until I learn GraphQL #
-# Goes out and batch fetches the current stars_count from the repos
-# I'm using GraphQL because I hit rate limits with the REST API.
-
-
 GITHUB_API_URL = "https://api.github.com/graphql"
 
 
+# Takes in a GitHub URL and returns the repo name and owner.
+# @param {str} url - A GitHub URL
+# @returns {str} owner - Owner's name
+# @returns {str} repo - Repo name
 def parse_repo_url(url):
     path = urlparse(url).path.strip("/")
 
@@ -26,11 +30,17 @@ def parse_repo_url(url):
     return owner, repo
 
 
+# Lazy feeds chunks of the array
+# @param {str list} items - An array of strings
+# @returns {str list} chunk_of_items - A chunk of strings from the passed-in array
 def chunks(items, size=100):
     for i in range(0, len(items), size):
         yield items[i : i + size]
 
 
+# Gets the stars of the passed in repos array
+# @param {str list} github_repo_urls - An array of GitHub repo URLs
+# @returns {dict} repos_and_stars - repo URLs as keys, repo stars count as value
 def getStarsOfRepos(github_repo_urls):
     repos_and_stars = {url: 0 for url in github_repo_urls}
 
@@ -82,6 +92,7 @@ def getStarsOfRepos(github_repo_urls):
     return repos_and_stars
 
 
+# Entry
 def main():
     json_file_data = loadJSONFile()
 
