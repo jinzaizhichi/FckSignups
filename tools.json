@@ -1471,6 +1471,83 @@
       "license": "GPL-3.0",
       "stars": 4,
       "featured": false
+    },
+    {
+      "id": "fluid",
+      "name": "Fluid",
+      "description": "Dependency-free WebGL studio for generative backgrounds and live embeds",
+      "url": "https://fluid.krackeddevs.com/",
+      "category": "design",
+      "tags": ["procedural", "shaders", "background", "generative-art"],
+      "github": "https://github.com/enonforetsam/fluid",
+      "license": "MIT",
+      "stars": 8,
+      "featured": false
+    },
+    {
+      "id": "screenshot-studio",
+      "name": "Screenshot Studio",
+      "description": "A free, browser-based screenshot editor. Beautiful backgrounds, device frames, 3D effects, animations, and video export. No signup, no watermarks.",
+      "url": "https://www.screenshot-studio.com/",
+      "category": "design",
+      "tags": ["screenshot-editor", "canvas", "mockup"],
+      "github": "https://github.com/KartikLabhshetwar/screenshot-studio",
+      "license": "Apache-2.0",
+      "stars": 708,
+      "featured": false
+    },
+    {
+      "id": "icon-maker",
+      "name": "Icon Maker",
+      "description": "Tool that lets you quickly generate clean, professional app icons using customizable shapes, gradients, and glyphs",
+      "url": "https://ray.so/icon",
+      "category": "design",
+      "tags": ["logo-designer", "icon-generator"],
+      "github": "https://github.com/raycast/ray-so",
+      "license": "MIT",
+      "stars": 2306,
+      "featured": false
+    },
+    {
+      "id": "bundlephobia",
+      "name": "Bundlephobia",
+      "description": "Find out the cost of adding a new frontend dependency to your project",
+      "url": "https://bundlephobia.com/",
+      "category": "development",
+      "tags": [
+        "dependency-audit",
+        "frontend-optimization",
+        "npm-analyzer",
+        "bundle-size"
+      ],
+      "github": "https://github.com/pastelsky/bundlephobia",
+      "license": "MIT",
+      "stars": 9537,
+      "featured": false
+    },
+    {
+      "id": "schema3d",
+      "name": "Schema3D",
+      "description": "An interactive tool for visualizing relational database schemas in 3D.",
+      "url": "https://schema3d.com/",
+      "category": "data",
+      "tags": ["sql", "3d", "database", "schema"],
+      "github": "https://github.com/shane-jacobeen/schema3d",
+      "license": "MIT",
+      "stars": 8,
+      "featured": false
+    },
+    {
+      "id": "transform",
+      "name": "Transform",
+      "description": "A polyglot web converter",
+      "url": "https://transform.tools/",
+      "category": "development",
+      "tags": ["code", "converter", "syntax", "ast", "transformer"],
+      "github": "https://github.com/ritz078/transform",
+      "license": "MIT",
+      "stars": 9176,
+      "featured": false
     }
   ]
 }
