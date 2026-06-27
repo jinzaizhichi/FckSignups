@@ -555,18 +555,6 @@
       "featured": false
     },
     {
-      "id": "video-compress",
-      "name": "Video Compress",
-      "description": "Compress Videos for Free. Forever",
-      "url": "https://videocompress.prolab.sh/",
-      "category": "media",
-      "tags": ["media", "video", "compression"],
-      "github": "https://github.com/pranavp10/video-compress",
-      "license": "MIT",
-      "stars": 352,
-      "featured": false
-    },
-    {
       "id": "subtitleedit",
       "name": "SubtitleEdit",
       "description": "Online Subtitle Editor",
