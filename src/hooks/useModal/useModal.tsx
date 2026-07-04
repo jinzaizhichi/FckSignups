@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-import type { ModalConfig, TextField } from "./types";
+import type { ModalConfig } from "./types";
 import { fieldsMaker } from "./fieldsMaker";
 
 type showModalFields = (
@@ -76,10 +76,12 @@ function ModalRenderer({ modalConfig }: { modalConfig: ModalConfig }) {
               CLOSE
             </button>
           </div>
-        ) : (
+        ) : modalStatus === "failure" ? (
           <p className="modal-error">
             Encountered an error while submitting...
           </p>
+        ) : (
+          <p>Submitting...</p>
         )}
       </div>
     </div>
