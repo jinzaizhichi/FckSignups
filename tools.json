@@ -2161,6 +2161,78 @@
       "license": "MIT",
       "stars": 13,
       "featured": false
+    },
+    {
+      "id": "giraffile",
+      "name": "Giraffile",
+      "description": "Share files quickly and securely without relying on cloud servers",
+      "url": "https://giraffile.pages.dev/",
+      "category": "utilities",
+      "tags": ["file-transfer", "file-share"],
+      "github": "https://github.com/coffeetron832/Giraffile",
+      "license": "MIT",
+      "stars": 74,
+      "featured": false
+    },
+    {
+      "id": "openreader",
+      "name": "OpenReader",
+      "description": "Text-to-speech document reader built with Next.js for EPUB, PDF, TXT, MD, and DOCX with multilingual, synchronized read-along playback",
+      "url": "https://openreader.richardr.dev/app",
+      "category": "utilities",
+      "tags": ["pdf-reader", "epub-reader", "ebook-reader", "text-to-speech"],
+      "github": "https://github.com/richardr1126/openreader",
+      "license": "MIT",
+      "stars": 460,
+      "featured": false
+    },
+    {
+      "id": "readest",
+      "name": "Readest",
+      "description": "Ebook reader designed for immersive and deep reading experiences",
+      "url": "https://web.readest.com/",
+      "category": "utilities",
+      "tags": ["pdf-reader", "epub-reader", "ebook-reader"],
+      "github": "https://github.com/readest/readest",
+      "license": "AGPL-3.0",
+      "stars": 22127,
+      "featured": false
+    },
+    {
+      "id": "gitfut",
+      "name": "GitFut",
+      "description": "Your GitHub, rated out of 99 ⚽",
+      "url": "https://gitfut.com/",
+      "category": "development",
+      "tags": ["fun", "github-profile"],
+      "github": "https://github.com/younesfdj/gitfut",
+      "license": "MIT",
+      "stars": 1675,
+      "featured": false
+    },
+    {
+      "id": "checkmygit",
+      "name": "CheckMyGit",
+      "description": "Transform any GitHub profile into a stunning portfolio in seconds.",
+      "url": "https://checkmygit.com/",
+      "category": "development",
+      "tags": ["GitHub-profile", "stats"],
+      "github": "https://github.com/whoisyurii/checkmygit",
+      "license": "MIT",
+      "stars": 611,
+      "featured": false
+    },
+    {
+      "id": "strong-editor",
+      "name": "Strong Editor",
+      "description": "Text editor that highlights poor wording in real-time - and makes you write better",
+      "url": "https://strongeditor.com/",
+      "category": "writing",
+      "tags": ["writing-assistant", "text-editor"],
+      "github": "https://github.com/Great-Software-Company/strongeditor",
+      "license": "GPL-3.0",
+      "stars": 6,
+      "featured": false
     }
   ]
 }
