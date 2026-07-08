@@ -1566,14 +1566,13 @@
       "id": "pattern-craft",
       "name": "Pattern Craft",
       "description": "Professional-grade background patterns and gradients for your websites and apps",
-      "url": "https://patterncraft.fun/",
+      "url": "https://patterncraft.store/",
       "category": "design",
       "tags": ["background", "patterns", "gradient"],
       "github": "https://github.com/megh-bari/pattern-craft",
       "license": "MIT",
       "stars": 3017,
-      "featured": false,
-      "notRecommendedReason": "Domain currently down"
+      "featured": false
     },
     {
       "id": "component-gallery",

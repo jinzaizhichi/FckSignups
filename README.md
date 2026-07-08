@@ -91,7 +91,7 @@ Don't be afraid to critique.
 
 ## License
 
-The FckSignups directory code is released under the **MIT License**.
+The FckSignups directory code is released under the **GPL-3.0 License**.
 
 Individual tools listed in the directory retain their own licenses. We do not claim ownership of any third-party projects.
 
