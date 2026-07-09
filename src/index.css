@@ -530,7 +530,7 @@ input[type="text"]::placeholder {
 }
 
 .card-header svg {
-    cursor: pointer;
+    cursor: help;
 }
 
 .card-title-wrap {

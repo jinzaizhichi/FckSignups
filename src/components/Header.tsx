@@ -54,9 +54,11 @@ export function Header({
                 Open Source Tools. No Signups. Right in your browser
               </p>
               <p className="tagline-sub">
-                A curated collection of open-source tools you can use instantly
-                in your browser. no accounts, no emails, no tracking. Just tools
-                that work.
+                Ever tried to use a simple tool, and it had the audacity to ask
+                for a signup? Ever rolled your eyes at signup screens? If yes,
+                this should help you out! An reviewed-list of no-signup tools
+                that work instantly in your browser. Now say it with me: f*ck
+                signups!
               </p>
             </div>
           </div>

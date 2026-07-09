@@ -2382,6 +2382,89 @@
       "license": "?",
       "stars": 8,
       "featured": false
+    },
+    {
+      "id": "the-missing-manual",
+      "name": "The Missing Manual",
+      "description": "Clear, in-depth guides to everything from how a computer boots up to how the internet, databases, and AI really work",
+      "url": "https://themissingmanual.dev",
+      "category": "education",
+      "tags": [
+        "cs",
+        "computer-science",
+        "technical-guides",
+        "learning-resource"
+      ],
+      "github": "https://github.com/Topurrra/themissingmanual",
+      "license": "CC-BY-SA-4.0",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "id": "roadmapssh",
+      "name": "Roadmaps.sh",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers",
+      "url": "https://roadmap.sh/",
+      "category": "education",
+      "tags": [
+        "roadmaps",
+        "developer-resources",
+        "learning-resources",
+        "cs",
+        "computer-science"
+      ],
+      "github": "https://github.com/nilbuild/developer-roadmap",
+      "license": "Custom",
+      "stars": 359924,
+      "featured": false
+    },
+    {
+      "id": "relay",
+      "name": "Relay",
+      "description": "WebRTC peer-to-peer file transfer",
+      "url": "https://relay.rishishah.in",
+      "category": "utilities",
+      "tags": ["file-transfer", "file-share"],
+      "github": "https://github.com/byrishi/Relay",
+      "license": "MIT",
+      "stars": 4,
+      "featured": false
+    },
+    {
+      "id": "ffmpeg-cli-online",
+      "name": "FFmpeg CLI Online",
+      "description": "Run ffmpeg directly in your browser with a terminal-like interface.",
+      "url": "https://ffmpeg.wide.video",
+      "category": "development",
+      "tags": ["ffmpeg", "cli"],
+      "github": "https://github.com/wide-video/ffmpeg-wasm",
+      "license": "GPL-3.0",
+      "stars": 19,
+      "featured": false
+    },
+    {
+      "id": "colorkit",
+      "name": "ColorKit",
+      "description": "feature-rich color picker and analysis tool",
+      "url": "https://colorskit.vercel.app/",
+      "category": "design",
+      "tags": ["color-picker", "gradient-maker", "color-pallete"],
+      "github": "https://github.com/codewithdhruba01/ColorPicker",
+      "license": "MIT",
+      "stars": 3,
+      "featured": false
+    },
+    {
+      "id": "open-razerkit",
+      "name": "Open-RazerKit",
+      "description": "Control your Razer device's RGB, effects, and settings",
+      "url": "https://hamzayslmn.github.io/open-razerkit/",
+      "category": "utilities",
+      "tags": ["razor", "rgb-control"],
+      "github": "https://github.com/HamzaYslmn/open-razerkit",
+      "license": "Custom",
+      "stars": 14,
+      "featured": false
     }
   ]
 }
