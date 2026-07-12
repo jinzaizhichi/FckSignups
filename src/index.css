@@ -11,8 +11,8 @@
     --border: #222;
     --border-light: #333;
     --text: #f0f0f0;
-    --text-dim: #aaa;
-    --text-muted: #fff;
+    --text-dim: #dfdfdf;
+    --text-muted: #656565;
     --accent: #ff0040;
     --accent-2: #00ff88;
     --accent-3: #ffaa00;
@@ -175,13 +175,23 @@ h1 .fck {
 }
 
 h1 .fck::after {
-    content: "F*CK";
+    content: "NO";
     position: absolute;
     top: 2px;
     left: 2px;
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 0, 64, 0.2);
     z-index: -1;
+}
+
+h1 .dotnet {
+    font-size: 2rem;
+    color: var(--accent-4);
+}
+
+.formerly-fcksignups {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
 }
 
 .tagline-block {
@@ -644,7 +654,7 @@ input[type="text"]::placeholder {
 .tag {
     font-family: var(--font-mono);
     font-size: 0.7rem;
-    color: var(--text-muted);
+    color: var(--text);
     padding: 0.15rem 0.4rem;
     border: 1px solid var(--border);
     border-radius: 2px;

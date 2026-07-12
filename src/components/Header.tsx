@@ -44,11 +44,15 @@ export function Header({
               style={{ cursor: "pointer" }}
               onClick={() => setSearchQuery("")}
             >
-              <span className="fck glitch" data-text="F*CK">
-                F*CK
+              <span className="fck glitch" data-text="NO">
+               NO
               </span>
               <span className="signups">Signups</span>
+              <span className="dotnet">.net</span>
             </h1>
+            <h2 className="formerly-fcksignups">
+              (formerly FckSignups.com)
+            </h2>
             <div className="tagline-block">
               <p className="tagline-main">
                 Open Source Tools. No Signups. Right in your browser
@@ -57,7 +61,7 @@ export function Header({
                 Ever tried to use a simple tool, and it had the audacity to ask
                 for a signup? Ever rolled your eyes at signup screens? If yes,
                 this should help you out! An reviewed-list of no-signup tools
-                that work instantly in your browser. Now say it with me: f*ck
+                that work instantly in your browser. Now say it with me: no
                 signups!
               </p>
             </div>
