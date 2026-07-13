@@ -6,24 +6,41 @@ import {
   type TextField,
 } from "./types";
 
-function makeTextField(field: TextField): ReactNode {
+type ModalFieldValues = Record<string, string>;
+type ModalUpdateField = (
+  modalId: string,
+  fieldName: string,
+  value: string,
+) => void;
+
+function makeTextField(
+  field: TextField,
+  fieldValues: ModalFieldValues,
+  updateField: (name: string, value: string) => void,
+) {
   return (
     <>
-      <label className="modal-label">{field.name}</label>
+      <label className="modal-label" htmlFor={field.name}>
+        {field.label}
+      </label>
       <input
         className="modal-input"
+        id={field.name}
         name={field.name}
         placeholder={field.placeholder}
         required={field.required}
-        value={field.value}
-      ></input>
+        value={fieldValues[field.name] ?? field.value ?? ""}
+        onChange={(event) => updateField(field.name, event.target.value)}
+      />
     </>
   );
 }
 
-function makeSelectField(field: SelectField): ReactNode {
-  // TODO //
-  // Implement fetcher for when the field.options is a function
+function makeSelectField(
+  field: SelectField,
+  fieldValues: ModalFieldValues,
+  updateField: (name: string, value: string) => void,
+): ReactNode {
   if (typeof field.options === "function") return null;
 
   return (
@@ -36,44 +53,68 @@ function makeSelectField(field: SelectField): ReactNode {
         id={field.name}
         name={field.name}
         required={field.required}
+        value={fieldValues[field.name] ?? "invalid"}
+        onChange={(event) => updateField(field.name, event.target.value)}
       >
         {Object.entries(field.options).map(([name, label]) => (
-          <option value={name}>{label}</option>
+          <option key={name} value={name}>
+            {label}
+          </option>
         ))}
       </select>
     </>
   );
 }
 
-function makeTextAreaField(field: TextAreaField) {
+function makeTextAreaField(
+  field: TextAreaField,
+  fieldValues: ModalFieldValues,
+  updateField: (name: string, value: string) => void,
+) {
   return (
     <>
-      <label className="modal-label">{field.name}</label>
+      <label className="modal-label" htmlFor={field.name}>
+        {field.label}
+      </label>
       <textarea
         className="modal-input modal-textarea"
+        id={field.name}
         name={field.name}
         placeholder={field.placeholder}
         required={field.required}
-      ></textarea>
+        value={fieldValues[field.name] ?? ""}
+        onChange={(event) => updateField(field.name, event.target.value)}
+      />
     </>
   );
 }
 
-export function fieldsMaker(modalConfig: ModalConfig) {
+export function fieldsMaker(
+  modalConfig: ModalConfig,
+  modalFieldValues: ModalFieldValues,
+  updateModalFieldValue: ModalUpdateField,
+) {
+  const activeFieldValues = modalFieldValues;
+
   let inputFields = modalConfig.pages.map((page) =>
     page.fields.map((field) => {
+      const updateField = (name: string, value: string) =>
+        updateModalFieldValue(modalConfig.modalId, name, value);
+
       switch (field.type) {
         case "text":
-          return makeTextField(field);
+          return makeTextField(field, activeFieldValues, updateField);
         case "select":
-          return makeSelectField(field);
+          return makeSelectField(field, activeFieldValues, updateField);
         case "textarea":
-          return makeTextAreaField(field);
+          return makeTextAreaField(field, activeFieldValues, updateField);
       }
     }),
   );
 
-  return inputFields
-    .flat()
-    .map((inputField) => <div className="modal-field">{inputField}</div>);
+  return inputFields.flat().map((inputField, index) => (
+    <div className="modal-field" key={index}>
+      {inputField}
+    </div>
+  ));
 }

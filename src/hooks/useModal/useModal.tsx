@@ -3,15 +3,17 @@ import {
   FormEvent,
   ReactNode,
   useContext,
+  useRef,
   useState,
 } from "react";
-import type { ModalConfig } from "./types";
 import { fieldsMaker } from "./fieldsMaker";
+import type { ModalConfig } from "./types";
 
 type showModalFields = (
   modalID: string | undefined,
   populatedFields?: Record<string, string>,
 ) => void;
+type ModalFieldValues = Record<string, string>;
 
 interface ModalController {
   showModalWithID: showModalFields;
@@ -31,12 +33,39 @@ export function useModal() {
 
 type ModalStatus = "idle" | "loading" | "success" | "failure";
 
-function ModalRenderer({ modalConfig }: { modalConfig: ModalConfig }) {
+function ModalRenderer({
+  modalConfig,
+  initialFieldValues,
+  saveFieldValues,
+}: {
+  modalConfig: ModalConfig;
+  initialFieldValues: ModalFieldValues;
+  saveFieldValues: (modalId: string, values: ModalFieldValues) => void;
+}) {
   const { showModalWithID } = useModal();
   const [modalStatus, setModalStatus] = useState<ModalStatus>("idle");
-  const modalInputFields = fieldsMaker(modalConfig);
+  const [modalFieldValues, setModalFieldValues] =
+    useState<ModalFieldValues>(initialFieldValues);
+
+  const modalInputFields = fieldsMaker(
+    modalConfig,
+    modalFieldValues,
+    (_modalId, fieldName, value) => {
+      setModalFieldValues((current) => ({
+        ...current,
+        [fieldName]: value,
+      }));
+    },
+  );
+
+  function closeModal() {
+    saveFieldValues(modalConfig.modalId, modalFieldValues);
+    showModalWithID(undefined);
+    setModalStatus("idle");
+  }
+
   return (
-    <div className="modal-overlay" onClick={() => showModalWithID(undefined)}>
+    <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-panel" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2 className="modal-title modal-title-accent">
@@ -44,7 +73,7 @@ function ModalRenderer({ modalConfig }: { modalConfig: ModalConfig }) {
           </h2>
           <button
             className="modal-close"
-            onClick={() => handleClose(setModalStatus, showModalWithID)}
+            onClick={closeModal}
             aria-label="Close"
           >
             ✕
@@ -69,10 +98,7 @@ function ModalRenderer({ modalConfig }: { modalConfig: ModalConfig }) {
             <p className="modal-success-sub">
               We'll review it and add it to the index shortly.
             </p>
-            <button
-              className="modal-submit-btn"
-              onClick={() => handleClose(setModalStatus, showModalWithID)}
-            >
+            <button className="modal-submit-btn" onClick={closeModal}>
               CLOSE
             </button>
           </div>
@@ -98,6 +124,7 @@ export function ModalProvider({
   const [requestedModalConfig, setRequestedModalConfig] = useState<
     ModalConfig | undefined
   >(undefined);
+  const modalFieldValuesRef = useRef<Record<string, ModalFieldValues>>({});
 
   function showModalWithID(
     modalID: string | undefined,
@@ -107,32 +134,42 @@ export function ModalProvider({
       (modalConfig) => modalConfig.modalId === modalID,
     );
 
-    // Debug statement
     if (requestedModalConfig === undefined && modalID !== undefined)
       console.warn(
         `Attempted to open a modal with id that doesn't exist. Modal_ID requested: ${modalID}`,
       );
 
-    // PopulateFields
-    if (requestedModalConfig !== undefined && populatedFields !== undefined) {
-      for (const [name, value] of Object.entries(populatedFields)) {
-        for (const page of requestedModalConfig.pages) {
-          for (const field of page.fields) {
-            if (field.name === name && field.type === "text")
-              field.value = value;
-          }
-        }
-      }
+    if (
+      modalID !== undefined &&
+      requestedModalConfig !== undefined &&
+      populatedFields !== undefined
+    ) {
+      modalFieldValuesRef.current[modalID] = {
+        ...(modalFieldValuesRef.current[modalID] ?? {}),
+        ...populatedFields,
+      };
     }
 
     setRequestedModalConfig(requestedModalConfig);
   }
 
+  function saveFieldValues(modalId: string, values: ModalFieldValues) {
+    modalFieldValuesRef.current[modalId] = values;
+  }
+
+  const activeFieldValues = requestedModalConfig
+    ? (modalFieldValuesRef.current[requestedModalConfig.modalId] ?? {})
+    : {};
+
   return (
     <ReportContext.Provider value={{ showModalWithID }}>
       {children}
       {requestedModalConfig && (
-        <ModalRenderer modalConfig={requestedModalConfig} />
+        <ModalRenderer
+          modalConfig={requestedModalConfig}
+          initialFieldValues={activeFieldValues}
+          saveFieldValues={saveFieldValues}
+        />
       )}
     </ReportContext.Provider>
   );
@@ -155,12 +192,4 @@ async function handleSubmit(
   });
 
   response.ok ? setModalStatus("success") : setModalStatus("failure");
-}
-
-function handleClose(
-  setModalStatus: (modalStatus: ModalStatus) => void,
-  showModalWithID: showModalFields,
-) {
-  setModalStatus("idle");
-  showModalWithID(undefined);
 }
