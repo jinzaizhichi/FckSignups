@@ -129,6 +129,10 @@ body::after {
     margin-bottom: 2rem;
 }
 
+.stars-button-container .stars-button:hover .star-svg {
+    color: black;
+}
+
 .submit-tool-button .star-svg {
     aspect-ratio: 1/1;
     color: var(--text);

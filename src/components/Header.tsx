@@ -29,7 +29,7 @@ export function Header({
             href="https://github.com/BraveOPotato/FckSignups"
             target="_blank"
             rel="noopener noreferrer"
-            className="submit-tool-button"
+            className="submit-tool-button stars-button"
             aria-label={`GitHub repository, current stars: ${starsCount}`}
           >
             {starsCount}
