@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Toast } from "../components/Toast";
-import { useReport } from "../hooks/useReport";
-import { useModal } from "../hooks/useModal";
 import { ChatIcon } from "../constants/icons";
+import { useModal } from "../hooks/useModal";
+import { useReport } from "../hooks/useReport";
 
 export function Report() {
   const { reportMode, setReportMode } = useReport();
@@ -53,19 +53,27 @@ function ReportMenu() {
   const { showModalWithID } = useModal();
   return (
     <>
-      <ul className="report-menu">
-        <li
-          className="report-menu-item submit-tool-button"
-          data-sticky={reportMode}
-          onClick={() => setReportMode(!reportMode)}
-        >
-          REPORT AN ENTRY
+      <ul className="report-menu" role="menu">
+        <li role="none">
+          <button
+            type="button"
+            role="menuitem"
+            className="report-menu-item submit-tool-button"
+            data-sticky={reportMode}
+            onClick={() => setReportMode(!reportMode)}
+          >
+            REPORT AN ENTRY
+          </button>
         </li>
-        <li
-          className="report-menu-item submit-tool-button"
-          onClick={() => showModalWithID("suggest-tool")}
-        >
-          SUGGEST A TOOL FOR US TO MAKE
+        <li role="none">
+          <button
+            type="button"
+            role="menuitem"
+            className="report-menu-item submit-tool-button"
+            onClick={() => showModalWithID("suggest-tool")}
+          >
+            SUGGEST A TOOL FOR US TO MAKE
+          </button>
         </li>
       </ul>
     </>
