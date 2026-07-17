@@ -34,8 +34,8 @@ export function Controls({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search tools by name, tag, or description..."
+            aria-label="Search tools by name, tag, or description"
             autoComplete="off"
-            aria-label="Search tools"
           />
         </div>
 
