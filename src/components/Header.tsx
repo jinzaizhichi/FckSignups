@@ -13,7 +13,7 @@ export function Header({
   setSearchQuery,
 }: HeaderProps) {
   const { showModalWithID } = useModal();
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState("????");
 
   useEffect(() => {
     fetch("https://api.github.com/repos/BraveOPotato/FckSignups")
