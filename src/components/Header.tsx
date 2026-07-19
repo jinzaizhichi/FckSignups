@@ -73,10 +73,16 @@ export function Header({
               SUBMIT A TOOL
             </button>
             <div className="stat-row">
-              {String(toolCount).padStart(3, "0")} TOOLS LOADED
+              <span className="white">
+                {String(toolCount).padStart(3, "0")}
+              </span>{" "}
+              TOOLS LOADED
             </div>
             <div className="stat-row">
-              {String(categoryCount).padStart(3, "0")} CATEGORIES
+              <span className="white">
+                {String(categoryCount).padStart(3, "0")}
+              </span>{" "}
+              CATEGORIES
             </div>
           </div>
         </div>
