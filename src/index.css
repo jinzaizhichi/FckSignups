@@ -179,6 +179,15 @@ body::after {
     margin-bottom: 2rem;
 }
 
+.stars-button-container .stars-button {
+    text-decoration: none;
+    width: 74px;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .stars-button-container .stars-button:hover .star-svg {
     color: black;
 }
@@ -187,6 +196,8 @@ body::after {
     aspect-ratio: 1/1;
     color: var(--text);
     width: 0.7rem;
+    margin-left: 4px;
+    transition-duration: 0.3s;
 }
 
 .header-grid {
