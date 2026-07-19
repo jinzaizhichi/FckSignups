@@ -1314,18 +1314,16 @@ label:has(+ .modal-input[required])::after {
 }
 
 /* Footer link button */
-.footer-link-btn {
+.footer-btn {
     background: none;
     border: none;
     color: inherit;
     font: inherit;
     cursor: pointer;
     padding: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
 }
 
-.footer-link-btn:hover {
+.footer-btn:hover {
     color: var(--accent);
 }
 

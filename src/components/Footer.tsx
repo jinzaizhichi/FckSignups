@@ -17,7 +17,7 @@ export function Footer() {
             <h3>Contribute</h3>
             <p>
               <button
-                className="footer-link-btn"
+                className="footer-btn"
                 onClick={() => showModalWithID("submit-tool")}
               >
                 Submit a tool
