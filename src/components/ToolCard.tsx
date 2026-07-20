@@ -102,22 +102,23 @@ export function ToolCard({ tool, category, setSearchQuery }: ToolCardProps) {
 
         <p className="card-desc">{tool.description}</p>
 
-        <div className="card-tags">
+        <ul className="card-tags">
           {tool.tags.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              className="tag"
-              aria-label={`Filter tools by ${tag.replace(/-/g, " ")}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                setSearchQuery(tag);
-              }}
-            >
-              #{tag}
-            </button>
+            <li key={tag}>
+              <button
+                type="button"
+                className="tag"
+                aria-label={`Filter tools by ${tag.replace(/-/g, " ")}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSearchQuery(tag);
+                }}
+              >
+                #{tag}
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="card-footer">
           <div className="footer-left">
